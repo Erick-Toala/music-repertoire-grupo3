@@ -9,6 +9,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AutorListComponent } from './components/autor/autor-list/autor-list.component';
 import { AutorFormComponent } from './components/autor/autor-form/autor-form.component';
 import { CancionListComponent } from './components/cancion/cancion-list/cancion-list.component';
+import { CancionFormComponent } from './components/cancion/cancion-form/cancion-form.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { CancionListComponent } from './components/cancion/cancion-list/cancion-
     NavbarComponent,
     AutorListComponent,
     AutorFormComponent,
-    CancionListComponent
+    CancionListComponent,
+    CancionFormComponent
   ],
   imports: [
     BrowserModule,
