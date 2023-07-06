@@ -27,7 +27,15 @@ const routes: Routes = [
   {
     path:'cancion',
     component:CancionListComponent
-  }
+  },
+  {
+    path:'cancion/create',
+    component:CancionFormComponent
+  },
+  {
+    path:'cancion/update/:id',
+    component:CancionFormComponent
+  },
 ];
 
 @NgModule({
