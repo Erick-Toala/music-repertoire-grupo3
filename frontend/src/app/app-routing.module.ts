@@ -5,6 +5,8 @@ import { AutorListComponent } from './components/autor/autor-list/autor-list.com
 import { AutorFormComponent } from './components/autor/autor-form/autor-form.component';
 
 import { CancionListComponent } from './components/cancion/cancion-list/cancion-list.component';
+import { CancionFormComponent } from './components/cancion/cancion-form/cancion-form.component';
+
 
 
 const routes: Routes = [
