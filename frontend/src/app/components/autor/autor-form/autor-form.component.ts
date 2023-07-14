@@ -51,7 +51,7 @@ export class AutorFormComponent implements OnInit{
       .subscribe(
         res => {
           console.log(res),
-          this.router.navigate(['/'])
+          this.router.navigate(['/autor'])
         },
         err => console.log(err)
       )
