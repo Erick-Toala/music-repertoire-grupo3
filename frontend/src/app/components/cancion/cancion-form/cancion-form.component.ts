@@ -4,12 +4,18 @@ import { Cancion } from '../../../interfaces/Cancion';
 import { CancionService } from '../../../services/cancion/cancion.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { AutorService } from '../../../services/autor/autor.service';
+
+
 @Component({
   selector: 'app-cancion-form',
   templateUrl: './cancion-form.component.html',
   styleUrls: ['./cancion-form.component.css']
 })
 export class CancionFormComponent  implements OnInit {
+
+  autor: any[]=[];
+
   
 
   cancion:Cancion={
@@ -27,8 +33,11 @@ export class CancionFormComponent  implements OnInit {
   constructor(
     private cancionService:CancionService,
     private router:Router,
-    private activatedRoute:ActivatedRoute
-    ){}
+    private activatedRoute:ActivatedRoute,
+    private autorService: AutorService
+    ){
+      this.autor = [];
+    }
 
   ngOnInit(){
     const params= this.activatedRoute.snapshot.params;
@@ -42,7 +51,15 @@ export class CancionFormComponent  implements OnInit {
             console.log(this.edit);
           }
         )
-    }
+    };
+    this.autorService.getAutors()
+      .subscribe(
+        res => {
+          this.autor = Object.values(res);
+          console.log(this.autor);
+        },
+        err => console.log(err)
+      );
 
   }
 
@@ -73,3 +90,4 @@ export class CancionFormComponent  implements OnInit {
   }
 
 }
+
