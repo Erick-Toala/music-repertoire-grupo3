@@ -46,6 +46,7 @@
         color: #434ee9;
         margin-left: 10px;
     }
+    
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -59,7 +60,7 @@
               <p class="h2">Álbumes</p>
             </blockquote>
         </figure>
-        <button class="btn btn-primary" style="margin-bottom: 0.15cm;">
+        <button class="btn btn-primary" style="margin-bottom: 0.15cm;" [routerLink]="['/album/create']">
             Crear Nuevo
         </button>
         <div class="row row-cols-1 row-cols-md-4">
@@ -68,7 +69,7 @@
             <div *ngFor="let album of albumes[0]" class="col mb-4">
                 <div class="card">
                     <img class="card-img-top" [src]="album.urlPortada" alt="Álbum 1">
-                    <div class="card-img-overlay">
+                    <div>
                         <a href="{{album.urlAlbum}}" target="_blank" class="play-button">
                             <i class="fas fa-play"></i>
                         </a>
@@ -78,34 +79,11 @@
                         <p class="card-text">{{album.idArtista.nombre}} • {{album.fechaLanzamiento | date:'yyyy'}}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="delete-icon"><i class="fas fa-trash"></i></a>
-                        <a href="#" class="edit-icon"><i class="fas fa-edit"></i></a>
+                        <a [routerLink]="['/album']" (click)="deleteAlbum(album._id)" class="delete-icon"><i class="fas fa-trash"></i></a>
+                        <a [routerLink]="['/album/update',album._id]" class="edit-icon"><i class="fas fa-edit"></i></a>
                     </div>
-                    
                 </div>
             </div>
-
-            <!-- Card 3 -->
-            <div class="col mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://www.lahiguera.net/musicalia/artistas/rauw_alejandro/disco/12995/rauw_alejandro_playa_saturno-portada.jpg" alt="Álbum 1">
-                    <div class="card-img-overlay">
-                        <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="play-button">
-                            <i class="fas fa-play"></i>
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Título del Álbum 1</h5>
-                        <p class="card-text">Descripción del Álbum 1.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="delete-icon"><i class="fas fa-trash"></i></a>
-                        <a href="#" class="edit-icon"><i class="fas fa-edit"></i></a>
-                    </div>
-                    
-                </div>
-            </div>
-
             <!-- Agrega más cards de álbumes aquí -->
 
         </div>

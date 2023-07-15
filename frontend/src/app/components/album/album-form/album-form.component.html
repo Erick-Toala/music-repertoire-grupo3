@@ -1,0 +1,49 @@
+<div class="container p-4">
+
+    <figure class="text-center">
+        <blockquote class="blockquote">
+          <p class="h2">Crear/Editar Álbum</p>
+        </blockquote>
+    </figure>
+    
+    <div class="row ">
+        <div class="col-sm-6 offset-md-3 ">
+            <div class="card card-body">
+                <form (submit)="edit ? updateAlbum() : submitAlbum()">
+                    <div class="form-group mb-3">
+                        <input type="text" name="nombre"[(ngModel)]="album.nombre" 
+                        class="form-control " placeholder="Nombre" autofocus>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" name="cancionPopular"[(ngModel)]="album.cancionPopular" 
+                        class="form-control" placeholder="ID Canción Popular">
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" name="idArtista"[(ngModel)]="album.idArtista" 
+                        class="form-control" placeholder="ID Artista">
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" name="urlPortada"[(ngModel)]="album.urlPortada" 
+                        class="form-control" placeholder="URL Portada">
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" name="urlAlbum"[(ngModel)]="album.urlAlbum" 
+                        class="form-control" placeholder="URL Álbum">
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" name="fechaLanzamiento"[(ngModel)]="album.fechaLanzamiento" 
+                        class="form-control" placeholder="Fecha de Lanzamiento">
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-secondary btn-block">
+                            Guardar
+                        </button>
+                        <button type="button" class="btn btn-dark " [routerLink]="['/album']">
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
