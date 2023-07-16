@@ -6,6 +6,10 @@ const ReseniaSchema = Schema(
             type: String,
             required: [ true, 'La descripción de la reseña es necesaria']
         },
+        nombre:{
+            type: String,
+            required: [ true, 'El nombre de la persona que dejo la reseña es necesaria']
+        },
         idCancion: {
             type: Schema.Types.ObjectId,
             ref:'Cancion',
