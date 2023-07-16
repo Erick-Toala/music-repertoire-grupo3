@@ -6,11 +6,9 @@ export const AlbumSchema = new Schema({
         type:String,
         required:true
     },
-    disquera:String,
-    numCanciones:Number,
     cancionPopular:{type: Schema.Types.ObjectId, ref:"Cancion"},
     idArtista:{type: Schema.Types.ObjectId, ref:"Autor"},
-    idCanciones:[{ type: Schema.Types.ObjectId, ref:"Cancion"}],
+    urlPortada:String,
     urlAlbum:String,
     fechaLanzamiento:{
         type:Date,

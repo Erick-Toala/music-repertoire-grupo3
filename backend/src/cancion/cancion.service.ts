@@ -15,7 +15,7 @@ export class CancionService {
     }
 
     async getCancion(cancionID:string):Promise<Cancion>{
-        const cancion = await this.cancionModel.findById(cancionID).populate('idArtista', 'nombre').exec();;
+        const cancion = await this.cancionModel.findById(cancionID).exec();;
         return cancion;
     }
 

@@ -34,9 +34,10 @@ export class CancionController {
         return res.status(HttpStatus.OK).json(cancion);
     }
 
-    @Delete('/delete')
-    async deleteCancion(@Res() res, @Query('cancionID') cancionID){
+    @Delete('/delete/:cancionID')
+    async deleteCancion(@Res() res, @Param('cancionID') cancionID){
         const cancionDeleted = await this.cancionService.deleteCancion(cancionID);
+        //si no recibo/encuentra ninguna cancion, retornamos un error con el NotFoundException
         if(!cancionDeleted)throw new NotFoundException('La canción no existe');
         return res.status(HttpStatus.OK).json({
             message:'Canción eliminada con éxito!',
@@ -44,9 +45,10 @@ export class CancionController {
         });
     }
 
-    @Put('/update')
-    async updateCancion(@Res() res, @Body() createCancionDTO:CreateCancionDTO, @Query('cancionID')cancionID){
+    @Put('/update/:cancionID')
+    async updateCancion(@Res() res, @Body() createCancionDTO:CreateCancionDTO, @Param('cancionID')cancionID){
         const cancionUpdate = await this.cancionService.updateCancion(cancionID, createCancionDTO);
+        //si no recibo/encuentra ninguna cancion, retornamos un error con el NotFoundException
         if(!cancionUpdate)throw new NotFoundException('La canción no existe');
         return res.status(HttpStatus.OK).json({
             message:'Canción actualizada con éxito!',

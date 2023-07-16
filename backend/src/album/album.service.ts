@@ -11,12 +11,12 @@ export class AlbumService {
     constructor(@InjectModel('Album') private readonly albumModel:Model<Album>){}
 
     async getAlbumes(): Promise<Album[]> {
-        const albumes = await this.albumModel.find().populate('cancionPopular idArtista', 'nombre').populate('idCanciones','nombre').exec();
+        const albumes = await this.albumModel.find().populate('cancionPopular idArtista', 'nombre').exec();
         return albumes;
     }
 
     async getAlbum(albumID:string):Promise<Album>{
-        const album = await this.albumModel.findById(albumID).populate('idArtista', 'nombre').exec();;
+        const album = await this.albumModel.findById(albumID).exec();;
         return album;
     }
 
