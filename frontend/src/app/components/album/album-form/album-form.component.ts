@@ -4,12 +4,20 @@ import {  Album } from '../../../interfaces/Album';
 import { AlbumService } from '../../../services/album/album.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { CancionService } from '../../../services/cancion/cancion.service';
+import { AutorService } from '../../../services/autor/autor.service';
+
+
 @Component({
   selector: 'app-album-form',
   templateUrl: './album-form.component.html',
   styleUrls: ['./album-form.component.css']
 })
 export class AlbumFormComponent implements OnInit  {
+
+  canciones: any[];
+  autor: any[]=[];
+
 
   album:Album={
     nombre:'',
@@ -24,9 +32,14 @@ export class AlbumFormComponent implements OnInit  {
 
   constructor(
     private albumService:AlbumService,
+    private cancionService: CancionService,
+    private autorService: AutorService,
     private router:Router,
     private activatedRoute:ActivatedRoute
-    ){}
+    ){
+      this.canciones = [];
+      this.autor = [];
+    }
 
   ngOnInit(){
     const params= this.activatedRoute.snapshot.params;
@@ -40,7 +53,23 @@ export class AlbumFormComponent implements OnInit  {
             console.log(this.edit);
           }
         )
-    }
+    };
+    this.cancionService.getCancions()
+      .subscribe(
+        res => {
+          this.canciones = Object.values(res);
+          console.log(this.canciones);
+        },
+        err => console.log(err)
+      );
+    this.autorService.getAutors()
+      .subscribe(
+        res => {
+          this.autor = Object.values(res);
+          console.log(this.autor);
+        },
+        err => console.log(err)
+      );
 
   }
 

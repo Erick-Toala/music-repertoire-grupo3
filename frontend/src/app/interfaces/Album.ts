@@ -5,5 +5,5 @@ export interface Album {
     idArtista:string;
     urlPortada:string;
     urlAlbum:string;
-    fechaLanzamiento:Date;
+    fechaLanzamiento:string;
 }

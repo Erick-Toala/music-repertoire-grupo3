@@ -44,5 +44,3 @@ export class AutorListComponent implements OnInit{
 
 }
 
-
-
