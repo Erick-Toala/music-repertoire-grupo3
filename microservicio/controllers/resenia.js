@@ -3,6 +3,7 @@ const { Resenia } = require('../models')
 
 
 const getResenias= async (req, res = response )=>{
+    
     const { limit = 20 , since=0 } =  req.query;
     const query = { status:true };
 
