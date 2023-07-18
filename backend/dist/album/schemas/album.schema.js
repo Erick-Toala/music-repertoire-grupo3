@@ -7,11 +7,9 @@ exports.AlbumSchema = new mongoose_1.Schema({
         type: String,
         required: true
     },
-    disquera: String,
-    numCanciones: Number,
     cancionPopular: { type: mongoose_1.Schema.Types.ObjectId, ref: "Cancion" },
     idArtista: { type: mongoose_1.Schema.Types.ObjectId, ref: "Autor" },
-    idCanciones: [{ type: mongoose_1.Schema.Types.ObjectId, ref: "Cancion" }],
+    urlPortada: String,
     urlAlbum: String,
     fechaLanzamiento: {
         type: Date,

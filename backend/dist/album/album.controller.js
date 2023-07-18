@@ -82,18 +82,18 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AlbumController.prototype, "getAlbum", null);
 __decorate([
-    (0, common_1.Delete)('/delete'),
+    (0, common_1.Delete)('/delete/:albumID'),
     __param(0, (0, common_1.Res)()),
-    __param(1, (0, common_1.Query)('albumID')),
+    __param(1, (0, common_1.Param)('albumID')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], AlbumController.prototype, "deleteAlbum", null);
 __decorate([
-    (0, common_1.Put)('/update'),
+    (0, common_1.Put)('/update/:albumID'),
     __param(0, (0, common_1.Res)()),
     __param(1, (0, common_1.Body)()),
-    __param(2, (0, common_1.Query)('albumID')),
+    __param(2, (0, common_1.Param)('albumID')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, album_dto_1.CreateAlbumDTO, Object]),
     __metadata("design:returntype", Promise)

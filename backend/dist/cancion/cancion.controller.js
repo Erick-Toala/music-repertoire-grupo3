@@ -82,18 +82,18 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], CancionController.prototype, "getCancion", null);
 __decorate([
-    (0, common_1.Delete)('/delete'),
+    (0, common_1.Delete)('/delete/:cancionID'),
     __param(0, (0, common_1.Res)()),
-    __param(1, (0, common_1.Query)('cancionID')),
+    __param(1, (0, common_1.Param)('cancionID')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], CancionController.prototype, "deleteCancion", null);
 __decorate([
-    (0, common_1.Put)('/update'),
+    (0, common_1.Put)('/update/:cancionID'),
     __param(0, (0, common_1.Res)()),
     __param(1, (0, common_1.Body)()),
-    __param(2, (0, common_1.Query)('cancionID')),
+    __param(2, (0, common_1.Param)('cancionID')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, cancion_dto_1.CreateCancionDTO, Object]),
     __metadata("design:returntype", Promise)

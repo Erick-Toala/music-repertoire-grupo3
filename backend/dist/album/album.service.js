@@ -21,11 +21,11 @@ let AlbumService = class AlbumService {
         this.albumModel = albumModel;
     }
     async getAlbumes() {
-        const albumes = await this.albumModel.find().populate('cancionPopular idArtista', 'nombre').populate('idCanciones', 'nombre').exec();
+        const albumes = await this.albumModel.find().populate('cancionPopular idArtista', 'nombre').exec();
         return albumes;
     }
     async getAlbum(albumID) {
-        const album = await this.albumModel.findById(albumID).populate('idArtista', 'nombre').exec();
+        const album = await this.albumModel.findById(albumID).exec();
         ;
         return album;
     }

@@ -26,28 +26,22 @@ import { Schema } from 'mongoose';
 export declare const AlbumSchema: Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, {
     nombre: string;
     fechaLanzamiento: Date;
-    idCanciones: import("mongoose").Types.ObjectId[];
     idArtista?: import("mongoose").Types.ObjectId;
-    disquera?: string;
-    numCanciones?: number;
+    urlPortada?: string;
     cancionPopular?: import("mongoose").Types.ObjectId;
     urlAlbum?: string;
 }, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<{
     nombre: string;
     fechaLanzamiento: Date;
-    idCanciones: import("mongoose").Types.ObjectId[];
     idArtista?: import("mongoose").Types.ObjectId;
-    disquera?: string;
-    numCanciones?: number;
+    urlPortada?: string;
     cancionPopular?: import("mongoose").Types.ObjectId;
     urlAlbum?: string;
 }>> & Omit<import("mongoose").FlatRecord<{
     nombre: string;
     fechaLanzamiento: Date;
-    idCanciones: import("mongoose").Types.ObjectId[];
     idArtista?: import("mongoose").Types.ObjectId;
-    disquera?: string;
-    numCanciones?: number;
+    urlPortada?: string;
     cancionPopular?: import("mongoose").Types.ObjectId;
     urlAlbum?: string;
 }> & {

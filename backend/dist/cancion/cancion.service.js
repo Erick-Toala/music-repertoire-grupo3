@@ -25,7 +25,7 @@ let CancionService = class CancionService {
         return canciones;
     }
     async getCancion(cancionID) {
-        const cancion = await this.cancionModel.findById(cancionID).populate('idArtista', 'nombre').exec();
+        const cancion = await this.cancionModel.findById(cancionID).exec();
         ;
         return cancion;
     }

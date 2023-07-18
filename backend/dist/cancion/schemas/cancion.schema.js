@@ -9,7 +9,6 @@ exports.CancionSchema = new mongoose_1.Schema({
     },
     duracion: String,
     idArtista: { type: mongoose_1.Schema.Types.ObjectId, ref: "Autor" },
-    idAlbum: String,
     urlPortada: String,
     urlYouTube: String,
     fechaLanzamiento: {

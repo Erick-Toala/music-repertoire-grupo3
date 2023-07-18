@@ -28,7 +28,6 @@ export declare const CancionSchema: Schema<any, import("mongoose").Model<any, an
     fechaLanzamiento: Date;
     duracion?: string;
     idArtista?: import("mongoose").Types.ObjectId;
-    idAlbum?: string;
     urlPortada?: string;
     urlYouTube?: string;
 }, import("mongoose").Document<unknown, {}, import("mongoose").FlatRecord<{
@@ -36,7 +35,6 @@ export declare const CancionSchema: Schema<any, import("mongoose").Model<any, an
     fechaLanzamiento: Date;
     duracion?: string;
     idArtista?: import("mongoose").Types.ObjectId;
-    idAlbum?: string;
     urlPortada?: string;
     urlYouTube?: string;
 }>> & Omit<import("mongoose").FlatRecord<{
@@ -44,7 +42,6 @@ export declare const CancionSchema: Schema<any, import("mongoose").Model<any, an
     fechaLanzamiento: Date;
     duracion?: string;
     idArtista?: import("mongoose").Types.ObjectId;
-    idAlbum?: string;
     urlPortada?: string;
     urlYouTube?: string;
 }> & {
